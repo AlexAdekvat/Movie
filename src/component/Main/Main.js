@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Header from '../Header/Header'
-import { getMovie } from '../Reducers/api'
+import MovieCard from '../MovieCard/MovieCard'
+import { getCurrentMovie, getMovie } from '../Reducers/api'
 import { setCurrentPage } from '../Reducers/MovieReducer'
 import { createPages } from './paginator'
 
@@ -16,8 +17,13 @@ const Main = () => {
     const pagesCount = Math.ceil(movieCount / page)
     const pages = []
     createPages(pages, pagesCount, currentPage)
-    debugger
-    // const movies = useSelector(state => state.movie.movie_count.data)
+
+
+    //const movieInfo = useSelector(state => state.movie.info)
+
+    // useEffect(()=>{
+    //     dispatch(getCurrentMovie())
+    // },[])
 
 
 
@@ -37,7 +43,8 @@ const Main = () => {
                 <Header data={data} />
             )}
 
-
+                {/* {movieInfo.map(data=>
+                <MovieCard data={data}/>)} */}
 
         </div>
 
