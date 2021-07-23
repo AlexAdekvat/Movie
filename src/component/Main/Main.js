@@ -39,8 +39,8 @@ const Main = () => {
                     //className={currentPage==page? "current-page":"page"}
                     onClick={() => dispatch(setCurrentPage(page))}>{page}</span>)}
             </div>
-            {moviesAll.map(data =>
-                <Header data={data} />
+            {moviesAll.map((data,key) =>
+                <Header key={key} data={data} />
             )}
 
                 {/* {movieInfo.map(data=>

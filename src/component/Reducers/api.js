@@ -11,7 +11,7 @@ export const getMovie = (currentPage, page) => {
 }
 //localAPI
    export const getCurrentMovie = async (id, setDataMuvie)=>{
-        debugger
+        //debugger
            const response = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
            setDataMuvie(response.data.data.movie)
   }
