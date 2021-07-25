@@ -7,7 +7,7 @@ const defaultState = {
     movies: [],
     id:[],
     currentPage: 1,
-    page: 20,
+    page:20,
     movieCount: 0
 
 }
@@ -31,24 +31,24 @@ export const movieReduser = (state = defaultState, action) => {
          case SET_CURRENT_MOVIE:
              return {
                  ...state,
-                 id: action.payload
+                 id: action.payload.movie
              }
         default:
             return state
     }
 }
-// export const movieIdReducer = (state = defaultState, action) => {
-//     switch (action.type) {
+//  export const movieIdReducer = (state = defaultState, action) => {
+//      switch (action.type) {
        
-//         case SET_CURRENT_MOVIE:
-//             return {
-//                 ...state,
-//                 id: action.payload
-//             }
-//         default:
-//             return state
-//     }
-// }
+//          case SET_CURRENT_MOVIE:
+//              return {
+//                  ...state,
+//                  id: action.payload.movie
+//              }
+//          default:
+//              return state
+//      }
+//  }
 
 
 

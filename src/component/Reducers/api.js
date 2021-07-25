@@ -1,20 +1,19 @@
 import axios from "axios";
-import { setCurrentMovie, setMovies, setMoviesPage } from "./MovieReducer";
+import { setCurrentMovie, setMovies } from "./MovieReducer";
 
 
 export const getMovie = (currentPage, page) => {
     return async (dispatch) => {
-//debuger
         const response = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${page}&page=${currentPage}`)
         dispatch(setMovies(response.data.data))
     }
 }
 //localAPI
-   export const getCurrentMovie = async (id, setDataMuvie)=>{
-        //debugger
-           const response = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
-           setDataMuvie(response.data.data.movie)
-  }
+//    export const getCurrentMovie = async (id, setDataMovie)=>{
+//         //debugger
+//            const response = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
+//            setDataMovie(response.data.data.movie)
+//   }
 
 //  export const getCurrentMovie = async (id) => {
 //      return async (dispatch) => {
@@ -27,9 +26,10 @@ export const getMovie = (currentPage, page) => {
 //  }
 
 //ReduxApi
-//    export const getCurrentMovie = (id)=>{
-//        return async (dispatch)=>{
-//            const response = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
-//            dispatch(setCurrentMovie(response.data.data))
-//        }
-//    }
+    export const getCurrentMovie = (id)=>{
+        return async (dispatch)=>{
+            debugger
+            const response = await axios.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
+            dispatch(setCurrentMovie(response.data.data))
+        }
+    }

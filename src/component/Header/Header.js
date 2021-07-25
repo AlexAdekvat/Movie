@@ -11,12 +11,12 @@ const Header = (props) => {
 
         <div>
             <div>
-                {/* <NavLink to={`/movie_card/${data.id}/${data.medium_cover_image}`}><img src={data.medium_cover_image}/></NavLink> */}
+                 {/* <NavLink to={`/movie_card/${data.id}`}><img src={data.medium_cover_image}/></NavLink>  */}
             </div>
 
 
-         {/* <div onClick={() => dispatch(getCurrentMovie(data.id))}><NavLink to={`/movie_card/${data.id}`}>{data.title}</NavLink></div> */}
-             <div ><NavLink to={`/movie_card/${data.id}`}>{data.title}</NavLink></div> 
+          <div onClick={() => dispatch(getCurrentMovie(data.id))}><NavLink to={`/movie_card/${data.id}`}>{data.title}</NavLink></div> 
+             {/* <div ><NavLink to={`/movie_card/${data.id}`}>{data.title}</NavLink></div>  */}
             <div>{data.genres}</div>
             <div>{data.year}</div>
 

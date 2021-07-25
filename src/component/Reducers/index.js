@@ -7,7 +7,7 @@ import { movieIdReducer, movieReduser } from "./MovieReducer";
 
 const rootReducer = combineReducers({
     movie: movieReduser,
-    // movieId: movieIdReducer
+    //movieId: movieIdReducer
 })
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware)) )
