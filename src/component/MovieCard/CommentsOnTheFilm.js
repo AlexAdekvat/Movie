@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import {v4 as uuidv4} from 'uuid'
 
 const Comments = () => {
+
+
     const [text, setText] = useState('')
     const [item, setItem] = useState(
         JSON.parse(localStorage.getItem('item')) || []
@@ -15,19 +18,20 @@ const Comments = () => {
         if (text.trim() !== '') {
             const newComments = {
                 id: uuidv4(),
+                // id: uuidv4(),
                 text: text
             }
             setItem((item) => [...item, newComments])
             setText('')
-        } else {
-            alert('Enter')
-            //setText('')
-        }
+        } 
     }
 
-    const deleteComments = (id) => {
-        setItem(item.filter((text) => text.id !== id))
-    }
+     const deleteComments = (id) => {
+         setItem(item.filter((text) => text.id !== id))
+     }
+    //  const deleteComments = (text) => {
+    //      setItem(item.filter((id) => id.text !== text))
+    //  }
 
     return (
         <div>

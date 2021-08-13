@@ -10,8 +10,8 @@ const Header = (props) => {
     return (
 
         <div>
-            <div>
-                 {/* <NavLink to={`/movie_card/${data.id}`}><img src={data.medium_cover_image}/></NavLink>  */}
+            <div onClick={() => dispatch(getCurrentMovie(data.id))}>
+                  <NavLink to={`/movie_card/${data.id}`}><img src={data.medium_cover_image}/></NavLink>  
             </div>
 
 

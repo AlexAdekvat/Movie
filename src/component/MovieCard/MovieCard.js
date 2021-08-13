@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import Preloader from '../Main/Preloader'
 import { getCurrentMovie } from '../Reducers/api'
-import { setCurrentMovie } from '../Reducers/MovieReducer'
+import { setCurrentMovie, setisFetching } from '../Reducers/MovieReducer'
 import Comments from './CommentsOnTheFilm'
 
 
@@ -44,35 +45,41 @@ import Comments from './CommentsOnTheFilm'
 
 
 const MovieCard = () => {
-
-    const dispatch = useDispatch()
+    
+     const{id} = useParams()
+     //const id = props.match.params.id
+     const dispatch = useDispatch()
 
     const movieInfo = useSelector(state => state.movie.id)
+    //const isFetching = useSelector(state => state.movie.isFetching)
     const info = [movieInfo]
-// debugger
+ debugger
 
-    // useEffect(() => {
-    //     dispatch(getCurrentMovie())
-    // }, [])
-    // debugger
+       useEffect(() => {
+            dispatch(getCurrentMovie(id))
+       },[])
+
+
+     debugger
 
     return (
-        <div>
-            {info.map(({ title, medium_cover_image,slug, description_full }, index) => {
+        <>
+            {info?.map(({ title, medium_cover_image,slug, description_full, rating }, index) => {
                 debugger
                 return (
                     <div key={index}>
                         <div>{title}</div>
                         <div>{slug}</div>
                         <div>{description_full}</div>
+                        <div>{rating}</div>
                         <img src={medium_cover_image} />
+                        <div>    <Comments/>     </div>
                     </div>
                 )
-            })}
-              <div>
-             <Comments/>
-             </div>
-        </div>
+            }) }
+            
+        </>
+
     )
 }
 

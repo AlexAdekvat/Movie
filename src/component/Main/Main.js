@@ -43,9 +43,6 @@ const Main = () => {
                 <Header key={key} data={data} />
             )}
 
-                {/* {movieInfo.map(data=>
-                <MovieCard data={data}/>)} */}
-
         </div>
 
     )
