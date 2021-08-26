@@ -9,18 +9,17 @@ const defaultState = {
     currentPage: 1,
     page:20,
     movieCount: 0,
-    isFetching:false
-
+    isFetching:false 
 }
 
 export const movieReduser = (state = defaultState, action) => {
     switch (action.type) {
+        
         case SET_MOVIES:
             return {
                 ...state,
                 movies: action.payload.movies,
                 movieCount: action.payload.movie_count
-
             }
 
         case SET_CURRENT_PAGE:
@@ -34,19 +33,20 @@ export const movieReduser = (state = defaultState, action) => {
                  ...state,
                  id: action.payload.movie
              }
+
         case SET_IS_FETCHING:
            return {
                ...state,
                isFetching: action.isFetching
            }
+
         default:
             return state
     }
 }
 
 
-
 export const setMovies = (movie) => ({ type: SET_MOVIES, payload: movie })
 export const setCurrentPage = (page) => ({ type: SET_CURRENT_PAGE, payload: page })
 export const setCurrentMovie = (movie) => ({ type: SET_CURRENT_MOVIE, payload: movie })
-export const setisFetching = (isFetching) => ({ type: SET_IS_FETCHING, isFetching})
+export const setIsFetching = (isFetching) => ({ type: SET_IS_FETCHING, isFetching})
