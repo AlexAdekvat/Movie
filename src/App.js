@@ -8,7 +8,7 @@ const App = () => {
     <BrowserRouter>
       <div>
           <Switch>
-            <Route exact path='/Movie' component={MoviePageContainer} />
+            <Route exact path='/' component={MoviePageContainer} />
             <Route path='/movie_card/:id' component={MovieCard } />
              <Redirect to='/' />
           </Switch>

@@ -31,7 +31,7 @@ const MovieCard = () => {
     return (
         <>
             {isFetching ? <Preloader /> :
-                (info.map(({ title, medium_cover_image, genres, year, like_count, description_full, rating }, index) => {
+                (info.map(({ title, medium_cover_image, genres, year, description_full, rating }, index) => {
                     return (
                         <div key={index} className={styles.movieInfo}>
                             <div className={styles.header}>
